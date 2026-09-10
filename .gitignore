@@ -1,0 +1,15 @@
+# Local data / uploads
+/data/uploads/*
+!/data/uploads/.gitkeep
+/data/orders.json
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Env / secrets (keep settings out if you prefer — comment next line to include)
+# /data/settings.json

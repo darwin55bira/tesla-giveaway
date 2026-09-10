@@ -1,0 +1,7 @@
+# Tesla Giveaway Demo
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^data/ - [F,L]
+</IfModule>
