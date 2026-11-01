@@ -1,19 +1,29 @@
 <?php
 declare(strict_types=1);
 
+$sessionDir = sys_get_temp_dir();
+if (is_dir($sessionDir) && is_writable($sessionDir)) {
+    session_save_path($sessionDir);
+}
 session_start();
 
 define('BASE_PATH', dirname(__DIR__));
-define('DATA_PATH', BASE_PATH . '/data');
+
+$dataPath = BASE_PATH . '/data';
+if (!is_dir($dataPath) || !is_writable($dataPath)) {
+    $dataPath = sys_get_temp_dir() . '/tesla-giveaway-data';
+}
+
+define('DATA_PATH', $dataPath);
 define('UPLOAD_PATH', DATA_PATH . '/uploads');
 define('SETTINGS_FILE', DATA_PATH . '/settings.json');
 define('ORDERS_FILE', DATA_PATH . '/orders.json');
 
 if (!is_dir(DATA_PATH)) {
-    mkdir(DATA_PATH, 0755, true);
+    @mkdir(DATA_PATH, 0755, true);
 }
 if (!is_dir(UPLOAD_PATH)) {
-    mkdir(UPLOAD_PATH, 0755, true);
+    @mkdir(UPLOAD_PATH, 0755, true);
 }
 
 function defaultSettings(): array

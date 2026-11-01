@@ -1,0 +1,11 @@
+version = 1
+
+[build]
+language = "php"
+runtime = "8.4"
+packageManager = "composer"
+baseDirectory = "/"
+port = 8080
+installCommand = "composer install --no-dev --no-interaction --prefer-dist || true"
+buildCommand = ""
+startCommand = "php -S 0.0.0.0:$PORT -t . router.php"
