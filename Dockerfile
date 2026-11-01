@@ -9,4 +9,4 @@ ENV PORT=8080
 EXPOSE 8080
 USER www-data
 
-CMD ["sh", "-c", "exec php -S 0.0.0.0:${PORT:-8080} -t /app /app/router.php"]
+CMD ["sh", "-c", "exec php -S 0.0.0.0:${PORT:-8080}"]
