@@ -29,6 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
+    const paymentCards = document.querySelectorAll('.payment-card');
+    const paymentDetails = document.querySelectorAll('.payment-details');
+
+    paymentCards.forEach(card => {
+        card.addEventListener('click', () => {
+            paymentCards.forEach(c => c.classList.remove('selected'));
+            paymentDetails.forEach(d => d.classList.remove('active'));
+            card.classList.add('selected');
+            const radio = card.querySelector('input[type="radio"]');
+            if (radio) radio.checked = true;
+            const method = card.dataset.method;
+            const details = document.getElementById('details-' + method);
+            if (details) details.classList.add('active');
+        });
+    });
+
     const liveFeed = document.getElementById('liveFeed');
     if (liveFeed) {
         setInterval(async () => {
@@ -81,10 +97,9 @@ function initLiveToasts() {
                         <div class="live-toast-header">
                             <span class="live-toast-name">${escapeHtml(item.name)}</span>
                             <span class="live-toast-country">${escapeHtml(item.country)}</span>
-                            <span class="fake-tag">FAKE</span>
                         </div>
                         <p class="live-toast-text">Just paid delivery fee for <span class="live-toast-car">${escapeHtml(item.car)}</span></p>
-                        <p class="live-toast-status">Demo: scam sites invent pop-ups like this to pressure you.</p>
+                        <p class="live-toast-status">🚗 Car confirmed & dispatched! (${escapeHtml(item.fee)} fee paid)</p>
                     </div>
                 </div>
                 <div class="live-toast-progress"><div class="live-toast-progress-bar"></div></div>

@@ -14,24 +14,25 @@ $bodyClass = $bodyClass ?? '';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="<?= e(baseUrl('assets/images/tesla-logo.png')) ?>" type="image/png">
     <link rel="stylesheet" href="<?= e(baseUrl('assets/css/style.css')) ?>">
 </head>
 <body class="<?= e($bodyClass) ?>">
-<div class="demo-banner" role="alert">
-    ⚠️ <strong>Scam-awareness demo.</strong> This giveaway is fake. VoltDrive is not a real company.
-    Never pay a "delivery fee" for a prize. <a href="<?= e(baseUrl('payment.php')) ?>">See the red flags →</a>
-</div>
+<?php if (!empty($settings['demo_mode'])): ?>
+<div class="demo-banner">⚠️ EDUCATIONAL DEMONSTRATION ONLY — Not affiliated with Tesla, Inc.</div>
+<?php endif; ?>
 
 <header class="site-header">
     <div class="container header-inner">
         <a href="<?= e(baseUrl()) ?>" class="logo">
-            <span class="text-logo">⚡ <?= e($settings['brand']) ?></span>
+            <img src="<?= e(baseUrl('assets/images/tesla-logo.png')) ?>" alt="<?= e($settings['site_title']) ?>" class="tesla-logo-img">
         </a>
         <nav class="main-nav" id="mainNav">
             <a href="<?= e(baseUrl('#giveaway')) ?>">Giveaway</a>
             <a href="<?= e(baseUrl('#info')) ?>">Info</a>
             <a href="<?= e(baseUrl('#instruction')) ?>">Instruction</a>
             <a href="<?= e(baseUrl('participate.php')) ?>">Participate</a>
+            <a href="<?= e(baseUrl('transactions.php')) ?>">Transactions</a>
             <a href="<?= e(baseUrl('participate.php')) ?>" class="btn btn-sm">Claim Now</a>
         </nav>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
