@@ -1120,3 +1120,12 @@ img { max-width: 100%; display: block; }
     .countdown-item { min-width: 64px; padding: 14px 16px; }
     .countdown-item .num { font-size: 28px; }
 }
+
+/* Scam-awareness demo */
+.demo-banner{position:sticky;top:0;z-index:1000;background:#fde047;color:#111;padding:10px 16px;text-align:center;font-size:14px;line-height:1.4;border-bottom:2px solid #111}
+.demo-banner a{color:#111;text-decoration:underline;font-weight:600}
+.text-logo{font-weight:800;font-size:22px;letter-spacing:.5px;color:inherit}
+.fake-tag{display:inline-block;background:#fde047;color:#111;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.demo-note{background:#fef9c3;color:#111;border:1px dashed #a16207;border-radius:10px;padding:12px 16px;margin:0 auto 24px;max-width:760px;font-size:14px;line-height:1.5}
+.red-flags{padding-left:20px;line-height:1.6}
+.red-flags li{margin-bottom:8px}

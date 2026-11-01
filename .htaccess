@@ -1,7 +1,2 @@
-# Tesla Giveaway Demo
+# Scam-awareness demo
 Options -Indexes
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^data/ - [F,L]
-</IfModule>

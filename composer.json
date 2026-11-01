@@ -1,6 +1,6 @@
 {
-  "name": "tesla-giveaway/demo",
-  "description": "Tesla giveaway demo site",
+  "name": "scam-awareness/giveaway-demo",
+  "description": "Scam-awareness demo of a fake car giveaway (collects no data, takes no payments)",
   "type": "project",
   "require": {
     "php": ">=8.1"

@@ -9,12 +9,6 @@ if ($uri === '/health' || $uri === '/healthz') {
     return true;
 }
 
-if (preg_match('#^/data(/|$)#', $uri) === 1) {
-    http_response_code(403);
-    echo 'Forbidden';
-    return true;
-}
-
 $file = __DIR__ . $uri;
 if ($uri !== '/' && is_file($file)) {
     return false;
